@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-require 'pry'
 
     def new
       @user = User.new
@@ -12,7 +11,6 @@ require 'pry'
   		else
   			flash[:alert] = "Please make sure you have logged in correctly. If you do not have a login, please create a new account."
   			redirect_to signin_path
-  			end
   		end
     end
     
