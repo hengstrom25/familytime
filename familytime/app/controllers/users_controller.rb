@@ -10,7 +10,7 @@ before_action :logged_in?
   		@user.save
   		if @user
   			session[:user_id] = @user.id
-  			redirect_to user_path(@user)
+  			render json: user, status: 201
   		else
   			render :new
   		end
@@ -19,6 +19,7 @@ before_action :logged_in?
   	def show
   		if logged_in?
   			@user = User.find_by(id: params[:id])
+  			render json: user
   		else
   			redirect_to root_url
   		end
