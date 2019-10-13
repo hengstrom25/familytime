@@ -23,7 +23,7 @@ before_action :logged_in?
   	
   	def show
   		if logged_in?
-  			@user = User.find_by(id: params[:id])
+  			user = User.find_by(id: params[:id])
   			render json: user
   		else
   			redirect_to root_url
