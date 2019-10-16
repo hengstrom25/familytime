@@ -3,12 +3,13 @@ Rails.application.routes.draw do
 
 	root 'static_pages#home'
 	
-	resources :users
-
 	get '/signin' => 'sessions#new'
   	post '/signin' => 'sessions#create'
   	get '/logout', to: 'sessions#destroy', as: 'logout'
-  	
+	
+	resources :users
+
+
 
 	
 end
